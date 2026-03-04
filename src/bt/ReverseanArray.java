@@ -1,19 +1,15 @@
 
 package bt;
-
-
-
-
    import java.util.Scanner;
 
-public class ReverseAnArray {
+public class ReverseanArray {
 
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
     System.out.print("Enter number of values: ");
     int n = scanner.nextInt();
     int[] a = new int[n];
-    for (int i = 0; i < n-1; i++) {
+    for (int i = 0; i < n; i++) {
       int i2 = i + 1;
       System.out.print(" Value number " +i2+ ": ");
       a[i] = scanner.nextInt();
@@ -27,11 +23,10 @@ public class ReverseAnArray {
       }
     }
     System.out.println("]");
-    for (int i = 0; i <= (a.length) / 2; i++) {
-      int tam = a[i];
-      a[i] = a[n - 2];
-      a[n - 2] = tam;
-      n--;
+    for (int i = 0; i < (a.length) / 2; i++) {
+      int temp = a[i];
+      a[i] = a[a.length - 1 -i];
+      a[a.lenght - 1 - i] = temp;
     }
     System.out.print("[");
     for (int i = 0; i < a.length; i++) {
